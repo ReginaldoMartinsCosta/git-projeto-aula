@@ -1,0 +1,55 @@
+.layout-cabecalho {
+  height: 60px;
+  line-height: 60px; /* Altura da linha vai ser o mesmo tamanho da altura do elemento */
+  border-bottom: 1px solid #ccc;
+
+  background-color: #fff;
+}
+
+.layout-cabecalho--home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* REGINALDO: retirado na AULA 7.12;
+.layout-cabecalho img {
+  margin-top: 12px;
+}
+*/
+.layout-planos {
+  padding: 80px 0;
+}
+
+.layout-chamada {
+  padding: 80px 0;
+  margin-top: 60px;
+
+  background-color: #7ab55c;
+}
+
+.layout-depoimento {
+  padding: 80px 0;
+  background-color: #e7e7e7;
+}
+
+.layout-rodape {
+  padding: 40px 0;
+
+  background-color: #484848;
+
+  color: #fff;
+  text-align: center;
+}
+
+@media(max-width: 749px) {  /* AULA 7.10 */
+  .layout-planos .row > div:not(.ultima-coluna) {   /* "ultima-coluna" eh uma classe pra marcar o componente e "negar" o estilo*/
+    margin-bottom: 40px;
+  }
+}
+
+.layout-assinatura {
+  padding: 40px 0;
+}
