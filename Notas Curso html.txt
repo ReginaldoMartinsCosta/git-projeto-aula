@@ -1,0 +1,306 @@
+
+
+2.1. O que é HTML?
+------------------
+Padrão internacional de especificação mantido pelo w3c e whatwg
+É a linguagem que descreve a estrutura e o conteúdo semântico de um documento da Web
+É uma linguagem de marçação de hipertexto
+HTML5 - última versão do HTML
+Semântica = significado das coisas
+
+CSS  - estilo e formatação
+HTML - conteúdo e seu significado
+
+2.2. Estrutura básica do documento
+----------------------------------
+Um documento html é composto por um conjunto de ELEMENTOS.
+Esses elementos definem a semantica (significado) do documento
+Todo elemento tem um significado
+Por exemplo: o elemento <html> significa que você está iniciando e encerrando um documento. 
+             Ele "define" que um documento é html
+<head> - cabeçalho. Tudo que não é visual. Informações como título, css, etc.
+<body> - corpo do documento. Tudo que será visto no navegador
+
+As TAGs (ELEMENTOS) podem ter atributos
+
+
+2.3. DOCTYPE e codificação
+--------------------------
+<!DOCTYPE html>
+Obrigatório. Instrução para o browser. Declaração que indica pro navegador a versão do HTML.
+
+<meta charset="utf-8"> - dentro de head - especifica qual o charset foi salvo o documento
+
+
+2.4. Primeiras tags: títulos, quebras de linhas e parágrafos
+------------------------------------------------------------
+Para renderizar certo, precisamos colocar a SEMANTICA (TAG) no body.
+É importante dar o SIGNIFICADO CORRETO (semantica correta) aos elementos da página. Um mecanismo de busca pode se
+basear nessa semantica para enfatizar busca.
+<h1> até <h6> ==> Títulos. 1 a 6 são níveis de importância
+<p> ==> qual é a SEMANTICA? Qual é o SIGNIFICADO? É um parágrafo...
+
+2.5. Comentários
+----------------
+<!-- Comentário -->
+
+2.6. Ênfase, importância e marcação
+-----------------------------------
+<em> adiciona ENFASE 
+<strong> significa que é mais importante
+<mark> serve pra dar relevância a um contexto específico
+
+2.7. Imagens
+------------
+Elemento que representa imagem dentro do documento
+<img src="img/jrebel.png" width="390" height="210" alt="JRebel">
+alt = quando a imagem não existe, mostra o que está em alt. Motor de busca identifica a imagem pelo alt
+
+2.8. Âncoras (links)
+--------------------
+<a href = link para outro local (outra página, ftp, email)
+target="_blank" = atributo para abrir em nova aba
+<a href="mailto:email@local.com"> = já abre o aplicativo de email
+
+2.9. Elementos estruturais
+--------------------------
+Separar o conteúdo da página em sessões
+<div> = container genérico
+<header> = SIGNIFICADO (SEMANTICA): é um cabeçalho
+<article> = é um objeto "artigo", que é um item de conteúdo qualquer. O h1 (título) do arquivo identifica qual é o artigo.
+<aside> = algo "separado" do conteúdo principal da página 
+<footer> = rodapé do body (da página ou documento)
+https://developer.mozilla.org/ = documentação dos elementos do HTML
+
+
+3.1. O que é CSS
+----------------
+CSS - Cascade Style Sheets - Folhas de estilo em cascata
+Linguagem de estilo para definir a formatação do html
+"in line" defino o estilo no próprio elemento
+
+3.2. Estilos incorporados e Regras CSS
+--------------------------------------
+"estilo incorporado" definido no <head> na tag <style>
+1. define seletor. Por exemplo: h1 { regras de css }
+
+3.3. Estilos em arquivos externos
+---------------------------------
+No head usa atag link
+   <link rel="stylesheet" href="css/estilos.css">
+   
+3.4. Seletores de tipo, classe e ID
+-----------------------------------
+h1#titulo ==> Colocado no arquivo CSS, significa: seletor h1 que tenha o ID "titulo"
+ ==> "h1 do ID titulo"
+ 
+#nomeDoID => qualquer elemento que tenha o ID "nomeDoID" vai pegar o estilo definido
+ ==> # precede o nome do ID 
+.nomeDaClasse => qualquer elemento que tenha o "CLASS" "nomeDaClasse" vai pegar o estilo definido
+ ==> . precede o nome da classe.
+ 
+O nome da classe deve ser SEMANTICO. Por exemplo:
+ ".vermelho" ==> errado
+ ".destaque" ==> correto
+  Colocamos um "significado" no nome, e não como ele vai aparecer
+  
+3.5. Agrupando seletores
+------------------------
+
+3.6. Seletores descendentes
+---------------------------
+Herança e descendência
+<p class="missao">Nossa missão é <strong>transformar</strong> a vida de milhares de alunos.</p>
+ ==> strong é filho de p
+ 
+NO CSS:
+.missao strong {} ==> quando eu tiver um strong que for filho da CLASS missão...
+.classe > componente {} ==> configura estilo para o componente quando o mesmo for FILHO DIRETO de .classe
+
+3.7. Seletores de filhos diretos
+--------------------------------
+NO CSS:
+article > .important ==> seleciona elementos com a classe "importante" que seja FILHO DIRETO de article (primeiro nível abaixo)
+.classe > componente {} ==> configura estilo para o componente quando o mesmo for FILHO DIRETO de .classe
+
+3.8. Cores
+----------
+rgb (red green blue)
+hexadecimal: números com 16 símbolos (0 a 9 + A a F - maiúsculo ou minúsculo)
+http://bit.ly/dec2hex => ferramenta para converter decimal para hexa
+http://bit.ly/as-cores => ferramenta de cores
+ 
+3.9. Formatação de textos
+-------------------------
+font-family:
+ .especifica uma lista de nomes de fontes por prioridades
+ .pode coloar 2 fontes separada por virgula. Se o navegador não achar a primeira, ele vai para a segunda.
+font-size: tamanho da fonte
+font-style: normal italic
+font-weight: peso da fonte (bold)
+
+text-decoration: underline, 
+text-align: alinhamento do texto em relação ao bloco onde ele se encontra
+
+3.10. Inspecionando com Chrome DevTools
+---------------------------------------
+
+3.11. Entendendo a propriedade display
+--------------------------------------
+display: inline = por exemplo tag a - ocupa só o espaço do texto
+display: block = por exemplo p - ocupa o espaço disponível na horizontal 
+display: inline-block 
+
+3.12. Adicionando bordas
+------------------------
+
+3.13. Espaçamento interno (padding)
+-----------------------------------
+padding - margem dentro da caixa (espaçamento interno)
+
+3.14. Margens de elementos
+--------------------------
+margin - desloca a caixa (espaçamento externo)
+
+3.15. Box model e a propriedade box-sizing
+------------------------------------------
+cálculo de tamanho de caixa
+todos os elementos de uma caixa são retângulos
+o valor padrão content-box de box-sizing é o valor da área de conteúdo.
+Padding e border está FORA da área de conteúdo
+
+box-sizing: border-box = a largura da borda vai pra DENTRO da caixa.
+A caixa engloba a BORDA E O PADDING (espaçamento interno) 
+
+
+4.3. Listas ordenadas e não-ordenadas
+-------------------------------------
+<ul> lista não ordenada
+  <li> item 1
+  <li> item 2
+  
+<ol> lista ordenada
+
+
+4.4. Adicionando os planos
+--------------------------
+line-height: 2.5; "duas vezes e meio o tamanho da fonte eu quero de altura"
+
+
+4.5. Flutuando elementos
+------------------------
+float ==> flutuar elementos e containers lado a lado na página.
+
+4.6. Usando pseudo-elementos
+----------------------------
+elemento::pseudo-elemento {
+   atributos...
+}
+
+4.7. Configurando os planos lado a lado com float
+-------------------------------------------------
+
+
+4.8. Criando um botão
+---------------------
+
+4.9. As pseudo-classes :focus e :hover
+--------------------------------------
+:: (duas vezes o "dois pontos") = pseudo-elemento
+: (uma vez o "dois pontos") = pseudo-classe
+
+4.10. Reset CSS e Normalize.css
+-------------------------------
+
+5.2. Unidade de medida: pixel
+-----------------------------
+pixel = um ponto na tela
+pixel deixa a fonte fixa. O usuário não consegue mudar o tamanho pelo navegador.
+pixel é uma medida que deve ser evitada em layouts responsivos.
+
+5.3. Unidade de medida: percentual
+----------------------------------
+Tamanho da fonte em % é em relação ao tamanho padrão do elemento PAI
+Fonte padrão do navegador: 16px
+10 / 16 * 100 = 62.5% ==> 10px em relação à fonte padrão do navegador
+
+
+5.8. Sistema de grid do Bootstrap
+---------------------------------
+https://getbootstrap.com/docs/3.4/css/
+
+container - linha - coluna
+
+<div class="col-xs-12 col-sm-3"> ==> classes do bootstrap
+col-xs-12 = xs (tela extra small) usa 12 colunas do grid
+col-sm-3 = sm (tela small) usa 3 colunas do grid
+
+6.1. Especificidade do CSS
+--------------------------
+Especificidade: um seletor especificando pela CLASSE é mais específico do que o seletor pela TAG
+ID é o mais específico de todos. In line é maior que ID...
+TAG >> Classe >> ID >> in line
+Especificidade é a forma como o navegador decide quais propriedades CSS serão aplicadas em um elemento
+
+
+6.6. Ajustando o projeto do curso com BEM
+-----------------------------------------
+Para usar BEM, deve-se fazer por CLASSE CSS e não por TAGs...
+Para usar BEM, deve-se fazer por CLASSE CSS e não por IDs...
+
+6.7. Mais organização: CSS com Guidelines
+-----------------------------------------
+Guia de estilos - arquivo de padronização
+
+7.1. Unidades de medida: em e rem
+---------------------------------
+Medidas relativas
+2em = 2 vezes o tamanho de fonte do pai
+0.5em = metade do tamanho da fonte do pai
+
+2rem: refere-se ao tamanho de fonte do DOCUMENTO
+
+7.3. Adicionando chamada principal
+----------------------------------
+Para user "em" achando uma medida em pixel:
+Por exemplo: quero que minha fonte tenha tamano de 54 pixels
+O componente pai tem 16 pixels (1.6rem = 1.6 * 10px = 16px)
+
+==> 54 / 16 = 3.375em
+
+7.6. Posicionamento estático e fixo
+-----------------------------------
+position: static
+position: fixed
+
+<header class="layout-cabecalho  layout-cabecalho--home">
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+7.5. Adicionando rodapé
+-----------------------
+&copy
+google: HTML Entities
+  
+7.7. Posicionamento relativo
+----------------------------
+position: relative = posição relativa à ela mesma
+
+7.8. Posicionamento absoluto
+----------------------------
+Absoluto em relação ao primeiro elemento pai que tem o position relative
+  position: absolute;
+  right: 0;
+  top: -200px;
+  z-index: 100;
+  
+7.11. Adicionando aspas no depoimento
+-------------------------------------
+no google: list unicode - na wikipedia
+
+7.12. Adicionando o bloco de navegação
+--------------------------------------
+<nav> elemento de navegação
